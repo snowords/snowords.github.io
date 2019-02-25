@@ -2,11 +2,11 @@ let myImage = document.querySelector('img');
 
 myImage.onclick = function(){
     let mySrc = myImage.getAttribute('src');
-    if (mySrc === 'image/sun-and-girl.jpg'){
-        myImage.setAttribute('src','image/firefox2.png');
+    if (mySrc === 'Sword-zero/image/sun-and-girl.jpg'){
+        myImage.setAttribute('src','Sword-zero/image/firefox2.png');
 
     }else{
-        myImage.setAttribute('src','image/sun-and-girl.jpg');
+        myImage.setAttribute('src','Sword-zero/image/sun-and-girl.jpg');
     }
 }
 document.querySelector('h1').onclick = function() {
