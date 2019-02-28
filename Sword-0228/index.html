@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu" rel="stylesheet">
+    <title>表单数据验证练习</title>
+    <style>
+        h3{
+            font-family: 'Ubuntu', sans-serif;
+
+        }
+        p{
+            font-family: 'Roboto', sans-serif;
+        }
+    .Ubuntu-font {
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 28px;
+
+    }
+    .Ubuntu-font2 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+    }
+    </style>
+</head>
+<body>
+    <h1>2019-02-28表单验证练习</h1>
+    <br>
+    <h3>The spectacle before us was indeed sublime.</h2>
+    <p>Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.</p>
+    <p class="Ubuntu-font">The spectacle before us was indeed sublime.</p>
+    <p class="Ubuntu-font2">Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.</p>
+    <h2>使用formdata 绑定表单提交数据</h2>
+    <form id="myForm">
+        <label for="myName">告诉我你的名字：</label>
+        <input id="myName" name="name" value="John">
+        <input type="submit" value="提交">
+      </form>
+      <br><br><br><br>
+      <h2>提交本地二进制数据[filereader]</h2>
+      <form id="myForm">
+        <p>
+          <label for="i1">文本数据：</label>
+          <input id="i1" name="myText" value="一些文本数据">
+        </p>
+        <p>
+          <label for="i2">文件数据：</label>
+          <input id="i2" name="myFile" type="file">
+        </p>
+        <button>提交</button>
+        <br><br><br><br>
+        <h2>手写信练习</h2>
+        <form>
+            <h1>to: Mozilla</h1>
+          
+            <div id="from">
+              <label for="name">from:</label>
+              <input type="text" id="name" name="user_name">
+            </div>
+          
+            <div id="reply">
+              <label for="mail">reply:</label>
+              <input type="email" id="mail" name="user_email">
+            </div>
+          
+            <div id="message">
+              <label for="msg">Your message:</label>
+              <textarea id="msg" name="user_message"></textarea>
+            </div>
+           
+            <div class="button">
+              <button type="submit">Send your message</button>
+            </div>
+          </form>
+      </form>
+
+</body>
+<script>
+window.addEventListener("load", function () {
+  function sendData() {
+    var XHR = new XMLHttpRequest();
+
+    // 我们把这个 FormData 和表单元素绑定在一起。
+    var FD  = new FormData(form);
+    // 我们定义了数据成功发送时会发生的事。
+    XHR.addEventListener("load", function(event) {
+      alert(event.target.responseText);
+    });
+    // 我们定义了失败的情形下会发生的事
+    XHR.addEventListener("error", function(event) {
+      alert('哎呀！出了问题。');
+    });
+
+    // 我们设置了我们的请求
+    XHR.open("POST", "http://ucommbieber.unl.edu/CORS/cors.php");
+
+    // 发送的数据是由用户在表单中提供的
+    XHR.send(FD);
+  }
+ 
+  // 我们需要获取表单元素
+  var form = document.getElementById("myForm");
+
+  // 接管表单的提交事件
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    sendData();
+  });
+});
+
+// 因为我们想获取DOM节点,
+// 我们在页面加载时初始化我们的脚本.    
+window.addEventListener('load', function () {
+
+// 这些变量用于存储表单数据
+var text = document.getElementById("i1");
+var file = {
+      dom    : document.getElementById("i2"),
+      binary : null
+    };
+
+// 使用 FileReader API 获取文件内容
+var reader = new FileReader();
+
+// 因为 FileReader 是异步的, 会在完成读取文件时存储结果
+reader.addEventListener("load", function () {
+  file.binary = reader.result;
+});
+
+// 页面加载时, 如果一个文件已经被选择, 那么读取该文件.
+if(file.dom.files[0]) {
+  reader.readAsBinaryString(file.dom.files[0]);
+}
+
+// 如果没有，一旦用户选择了它，就读取文件。
+file.dom.addEventListener("change", function () {
+  if(reader.readyState === FileReader.LOADING) {
+    reader.abort();
+  }
+  
+  reader.readAsBinaryString(file.dom.files[0]);
+});
+
+// 在我们的主函数中发送数据
+function sendData() {
+  // 如果存在被选择的文件，等待它读取完成
+  // 如果没有, 延迟函数的执行
+  if(!file.binary && file.dom.files.length > 0) {
+    setTimeout(sendData, 10);
+    return;
+  }
+
+  // 要构建我们的多部分表单数据请求,
+  // 我们需要一个XMLHttpRequest 实例
+  var XHR = new XMLHttpRequest();
+
+  // 我们需要一个分隔符来定义请求的每一部分。
+  var boundary = "blob";
+
+  // 将我们的请求主体存储于一个字符串中
+  var data = "";
+
+  // 所以，如果用户已经选择了一个文件
+  if (file.dom.files[0]) {
+    // 在请求体中开始新的一部分
+    data += "--" + boundary + "\r\n";
+
+    // 把它描述成表单数据
+    data += 'content-disposition: form-data; '
+    // 定义表单数据的名称
+          + 'name="'         + file.dom.name          + '"; '
+    // 提供文件的真实名字
+          + 'filename="'     + file.dom.files[0].name + '"\r\n';
+    // 和文件的MIME类型
+    data += 'Content-Type: ' + file.dom.files[0].type + '\r\n';
+
+    // 元数据和数据之间有一条空行。
+    data += '\r\n';
+    
+    // 添加二进制数据到请求体中
+    data += file.binary + '\r\n';
+  }
+
+  // 文本数据是简单的
+  // 开始一个新的部分在请求体中
+  data += "--" + boundary + "\r\n";
+
+  // 说它是表单数据，并命名它
+  data += 'content-disposition: form-data; name="' + text.name + '"\r\n';
+  // 元数据和数据之间有一条空行。
+  data += '\r\n';
+
+  // 添加文本数据到请求体中
+  data += text.value + "\r\n";
+
+  // 一旦完成，关闭请求体
+  data += "--" + boundary + "--";
+
+  // 定义成功提交数据执行的语句
+  XHR.addEventListener('load', function(event) {
+    alert('✌！数据已发送且响应已加载。');
+  });
+
+  // 定义发生错误时做的事
+  XHR.addEventListener('error', function(event) {
+    alert('哎呀！出了问题。');
+  });
+
+  // 建立请求
+  XHR.open('POST', 'https://example.com/cors.php');
+
+  // 添加需要的HTTP报头来处理多部分表单数据POST请求
+  XHR.setRequestHeader('Content-Type','multipart/form-data; boundary=' + boundary);
+
+  // 最后，发送数据。
+  XHR.send(data);
+}
+
+// 访问表单…
+var form = document.getElementById("myForm");
+
+// ……接管提交事件
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+  sendData();
+});
+});
+</script>
+</html>
