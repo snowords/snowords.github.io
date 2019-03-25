@@ -4,17 +4,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
     <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
     <title>CodePen - Drop-down menu</title>
-    
-    
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-  
         <style>
-        
-  
-  /* Please ❤ this if you like it! */
-  
-  
+     
   @import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
   @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
   
@@ -33,61 +25,9 @@
       -webkit-transition: all 300ms linear;
       transition: all 300ms linear;
   }
-  a {
-      cursor: pointer;
-  }
+  
   a:hover {
       text-decoration: none;
-  }
-  
-  /* #Cursor
-  ================================================== */
-  
-  .cursor,
-  .cursor2,
-  .cursor3{
-      position: fixed;
-      border-radius: 50%;	
-      transform: translateX(-50%) translateY(-50%);
-      pointer-events: none;
-      left: -100px;
-      top: 50%;
-      mix-blend-mode: difference;
-      -webkit-transition: all 300ms linear;
-      transition: all 300ms linear;
-  }
-  .cursor{
-      background-color: #fff;
-      height: 0;
-      width: 0;
-      z-index: 99999;
-  }
-  .cursor2,.cursor3{
-      height: 36px;
-      width: 36px;
-      z-index:99998;
-      -webkit-transition:all 0.3s ease-out;
-      transition:all 0.3s ease-out
-  }
-  .cursor2.hover,
-  .cursor3.hover{
-      -webkit-transform:scale(2) translateX(-25%) translateY(-25%);
-      transform:scale(2) translateX(-25%) translateY(-25%);
-      border:none
-  }
-  .cursor2{
-      border: 2px solid #fff;
-      box-shadow: 0 0 22px rgba(255, 255, 255, 0.6);
-  }
-  .cursor2.hover{
-      background: rgba(255,255,255,1);
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
-  }
-  
-  @media screen and (max-width: 1200px){
-      .cursor,.cursor2,.cursor3{
-          display: none
-      }
   }
   
   /* #Primary style
@@ -198,8 +138,8 @@
   .nav:before, .nav:after {
       content: "";
       position: fixed;
-    top: 20px;
-    left: 50px;
+      top: 20px;
+      left: 50px;
       width: 0;
       height: 0;
       background-color: rgba(20, 21, 26,0.6);
@@ -330,7 +270,7 @@
   }
   body.nav-active .nav:before, body.nav-active .nav:after {
       width: 250px;
-      height: 350px;
+      height: 550px;
       border-radius: 15px;
   }
   body.nav-active .nav:after {
@@ -397,7 +337,7 @@
   
   .switch-wrap {
       position: absolute;
-      top: 50%;
+      top: 25%;
       left: 0;
       z-index: 10;
       transform: translateY(-50%);
@@ -585,7 +525,7 @@
         <header class="cd-header">
           <div class="header-wrapper">
               <div class="logo-wrap">
-                  <a href="#" class="hover-target"><span>your</span>logo</a>
+                  <a href="https://www.douban.com/note/707383881/" class="hover-target"><span>Arya-</span>Stark</a>
               </div>
               <div class="nav-but-wrap">
                   <div class="menu-icon hover-target">
@@ -600,25 +540,31 @@
       <div class="nav">
           <div class="nav__content">
               <ul class="nav__list">
-                  <li class="nav__list-item active-nav"><a href="#" class="hover-target">Home</a></li>
-                  <li class="nav__list-item"><a href="#" class="hover-target">Portfolio</a></li>
-                  <li class="nav__list-item"><a href="#" class="hover-target">Studio</a></li>
-                  <li class="nav__list-item"><a href="#" class="hover-target">News</a></li>
-                  <li class="nav__list-item"><a href="#" class="hover-target">Contact</a></li>
+                <li class="nav__list-item active-nav"><a href="../Sword-0225/index.html" class="hover-target">练习-0225</a></li>
+                <li class="nav__list-item"><a href="../Sword-0226/index.html" class="hover-target">练习-0226</a></li>
+                <li class="nav__list-item"><a href="../Sword-0227/index.html" class="hover-target">练习-0227</a></li>
+                <li class="nav__list-item"><a href="../Sword-0228/index.html" class="hover-target">练习-0228</a></li>
+                <li class="nav__list-item"><a href="../Sword-0312/index.html" class="hover-target">练习-0312</a></li>
+                <li class="nav__list-item"><a href="../Sword-0313/index.html" class="hover-target">CSS练习-0313</a></li>
+                <li class="nav__list-item"><a href="../Sword-js-0315/index.html" class="hover-target">猜数字游戏-0315</a></li>
+                <li class="nav__list-item"><a href="../Sword-js-0318/index.html" class="hover-target">选择主题-0318</a></li>
+                <li class="nav__list-item"><a href="../Sword-js-0321/index.html" class="hover-target">弹窗背景-0321</a></li>
+                <li class="nav__list-item"><a href="../Sword-js-0322/index.html" class="hover-target">颜色块游戏-0322</a></li>
+                 
               </ul>
           </div>
       </div>		
   
       <div class="section full-height over-hide">	
           <div class="switch-wrap">
-              <h1>Drop-down menu</h1>
+              <h1>凡人皆有一死</h1>
               <div id="switch" class="hover-target">
                   <div id="circle"></div>
               </div>
-              <p><span>dark</span> - <span>light</span></p>
+              <p><span>死</span> - <span>生</span></p>
           </div>
       </div>	
-      
+     
       <div class="cursor" id="cursor" style="left: 950px; top: 263px;"></div>
       <div class="cursor2" id="cursor2" style="left: 950px; top: 263px;"></div>
       <div class="cursor3" id="cursor3" style="left: 950px; top: 263px;"></div>
@@ -630,9 +576,7 @@
       <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  
-    
-  
+
       <script>
         
   
@@ -708,15 +652,7 @@
   })(jQuery);
         //# sourceURL=pen.js
       </script>
-  
-  
-  
-    
-    
-  
+
     <script src="https://static.codepen.io/assets/editor/live/css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js"></script>
   
-  
-  
-   
   </body></html>
