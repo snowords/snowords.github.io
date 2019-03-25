@@ -18,6 +18,10 @@
       word-break: keep-all;
       white-space:nowrap;
     }
+
+    td:active{
+      background-color: red;
+    }
     caption {
       font-size: 2em;
     }
@@ -90,34 +94,24 @@
         </tr>
         <tr> <td scope = "row">长春路店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
         </tr>
+        <tr> <td scope = "row">总计</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">昨日业绩</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">今日新增</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
       </tbody>
-
     </table>
 
     <div>
-      <label for="yeji">请输入店面业绩：</label>
-      <textarea id="yeji" rows="11" cols="80"></textarea>
+      <textarea id="yeji" rows="11" cols="50"></textarea>
       <button onClick="putyeji()">注入表格</button>
       <button onClick="cleartext()">清除输入框</button>
+      <button onClick="sumyeji()">业绩求和</button>
     </div>
   </body>
   <script type="text/javascript">
-    //获取表格数据
-  let liantable = document.getElementById("liantable");
-  let data = [];
-  for(let i=0,rows=liantable.rows.length;i<rows;i++){
-    for(let j=0,cells=liantable.rows[1].cells.length;j<cells;j++){
-      if (!data[i]) {
-        data[i] = new Array;
-      }
-      data[i][j] = liantable.rows[i].cells[j].innerHTML;
-    }
-  }
-  // return data;
-  console.log("列数2：",liantable.rows.length);
-  console.log("行数2：",liantable.rows[0].cells.length);
-  console.log(data);
-
+let liantable = document.getElementById("liantable");
   //接收输入的数据,处理字符串
 function putyeji(){
   let yeji = document.getElementById("yeji");
@@ -125,7 +119,7 @@ function putyeji(){
   console.log(yejiData);
   let storeName = yejiData.split('\n');
   let storeArray = new Array(19);       //初始化数组
-  storeArray = yejiData.match(/\d+(.\d+)?/g);
+  storeArray = yejiData.match(/\d+(.\d+)?/g); 
   console.log(storeArray);
 
   let yejiArray = [0,storeArray[14],storeArray[15],storeArray[16],storeArray[17],storeArray[18],storeArray[19],storeArray[0],storeArray[1],storeArray[2],storeArray[3],storeArray[4],storeArray[5]]
@@ -197,6 +191,9 @@ function putyeji(){
       case "长春路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[22].cells[j].innerHTML = yejiArray[j];
       };break;
+      case "市北大区":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[24].cells[j].innerHTML = yejiArray[j];
+      };break;
 
       default:
     }
@@ -211,5 +208,33 @@ function cleartext(){
   console.log(123);
 }
 
+    
+
+  //业绩求和
+function sumyeji(){
+//获取表格数据
+
+  let data = [];
+  for(let i=0,rows=liantable.rows.length;i<rows;i++){
+    for(let j=0,cells=liantable.rows[1].cells.length;j<cells;j++){
+      if (!data[i]) {
+        data[i] = new Array;
+      }
+      data[i][j] = liantable.rows[i].cells[j].innerHTML;
+    }
+  }
+
+  console.log("列数2：",liantable.rows.length);
+  console.log("行数2：",liantable.rows[0].cells.length);
+  console.log(data);
+  for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+    let sumcol = 0;
+    for(let i=1;i<liantable.rows.length-2;i++){
+       sumcol += Number(data[i][j]);
+    }
+        liantable.rows[23].cells[j].innerHTML = sumcol;
+        liantable.rows[25].cells[j].innerHTML = sumcol-Number(data[24][j]);
+}
+}
   </script>
 </html>
