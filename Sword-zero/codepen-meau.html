@@ -87,7 +87,6 @@
   .nav-but-wrap{ 
       position: relative;
       display: inline-block;
-      float: left;
       padding-left: 15px;
       padding-top: 15px;
       margin-top: 26px;
@@ -484,7 +483,7 @@
   .link-to-portfolio {
         position: fixed;
       bottom: 40px;
-      right: 50px;
+      left: 50px;
       z-index: 200;
       cursor: pointer;
       width: 40px;
@@ -502,6 +501,20 @@
       opacity: 0.8;
       border-radius: 50%;
       box-shadow: 0 0 0 20px rgba(255,255,255,.1);
+  }
+
+  img {
+    position: fixed;
+      bottom: 20px;
+      right: 25px;
+      z-index: 200;
+      cursor: pointer;
+      width: 250px;
+      height: 250px;
+      text-align: center;
+      border-radius: 3px;
+    
+
   }
       </style>
   
@@ -550,7 +563,8 @@
                 <li class="nav__list-item"><a href="../Sword-js-0318/index.html" class="hover-target">选择主题-0318</a></li>
                 <li class="nav__list-item"><a href="../Sword-js-0321/index.html" class="hover-target">弹窗背景-0321</a></li>
                 <li class="nav__list-item"><a href="../Sword-js-0322/index.html" class="hover-target">颜色块游戏-0322</a></li>
-                 
+                <li class="nav__list-item"><a href="../XMLHttpRequest/index.html" class="hover-target">XHR请求json-0326</a></li>
+                <li class="nav__list-item"><a href="../Simple-Ball-Game/index.html" class="hover-target">弹球游戏-0326</a></li>
               </ul>
           </div>
       </div>		
@@ -563,8 +577,9 @@
               </div>
               <p><span>死</span> - <span>生</span></p>
           </div>
+          <img src="yer-love-whitebg.png"  alt="love and girl"/>
       </div>
-      <img src="yer-love-whitebg.png"  alt="love and girl" wight="300px" height="300px"/>
+      
      
       <div class="cursor" id="cursor" style="left: 950px; top: 263px;"></div>
       <div class="cursor2" id="cursor2" style="left: 950px; top: 263px;"></div>
@@ -578,9 +593,8 @@
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-      <script>
-        
-  
+   
+    <script>
   /* Please ❤ this if you like it! */
   
   
