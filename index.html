@@ -20,7 +20,6 @@
         padding: 0;
         margin: 0 auto;
         text-align: center;
-        bottom: 0; 
       }
       a {
         text-decoration: none;
@@ -33,23 +32,6 @@
   <body>
 
     <iframe src="Sword-zero/codepen-meau.html" width="100%" height="650px" class="codepen-meau" id="sword-333"frameborder="0"></iframe>
-    
-    <div class="link"> <a href="../MDN-test/index.html">You Have My Sword .</a>  </div>
+    <div class="link"> <a href="#" onClick="javascript:history.back(-1);">You Have My Sword .</a>  </div>
   </body>
-
-  <script>
-    var body = document.querySelector('body');
-    var WIDTH = window.innerWidth;
-    var HEIGHT = window.innerHeight;
-
-    body.style.width = WIDTH + 'px';
-    body.style.height = HEIGHT + 'px';
-
-    window.onresize = function() {
-      WIDTH = window.innerWidth;
-      HEIGHT = window.innerHeight;
-      body.style.width = WIDTH + 'px';
-      body.style.height = HEIGHT + 'px';
-    }
-  </script>
 </html>
