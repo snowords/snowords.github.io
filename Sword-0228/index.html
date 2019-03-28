@@ -76,6 +76,45 @@
           </form>
       </form>
 
+      <label for="select">--Select Theme-- :</label>
+      <select name="themeSelect" id="themeSelect">
+          <option value="white">White</option>
+          <option value="black">Black</option>
+          <option value="purple">Purple</option>
+          <option value="yellow">Yellow</option>
+          <option value="psyche">Psyche</option>  
+      </select>
+      <script>
+      var select = document.querySelector('select');
+      var html = document.querySelector('html');
+  
+      select.onchange = function() {
+      var choice = select.value;
+  
+      switch(choice) {
+      case 'black':
+        update('black','white');
+        break;
+      case 'white':
+        update('white','black');
+        break;
+      case 'purple':
+        update('purple','white');
+        break;
+      case 'yellow':
+        update('yellow','darkgray');
+        break;
+      case 'psyche':
+        update('lime','purple');
+        break;
+    }
+  }
+      function update(bgColor, textColor) {
+      html.style.backgroundColor = bgColor;
+      html.style.color = textColor;
+  }
+      </script>
+
 </body>
 <script>
 window.addEventListener("load", function () {
