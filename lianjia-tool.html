@@ -12,22 +12,23 @@
       text-align: center;
     }
     th,td {
-      table-layout: auto;
       width: 100px;
+      height: 1em;
       border: 1px solid black;
+      word-break: keep-all;
+      white-space:nowrap;
+    }
+    caption {
+      font-size: 2em;
+      color: red;
     }
     </style>
   </head>
 
   <body>
-      <div>
-        <label for="yeji">请输入店面业绩：</label>
-        <textarea id="yeji" rows="11" cols="80"></textarea>
-      </div>
-        <button onClick="putyeji()">接收业绩</button>
+
     <table id="liantable">
       <caption>市北大区每日业绩统计</caption>
-
       <thead>
         <tr>
           <th scope ="col">店名</th>
@@ -93,6 +94,12 @@
       </tbody>
 
     </table>
+
+    <div>
+      <label for="yeji">请输入店面业绩：</label>
+      <textarea id="yeji" rows="11" cols="80"></textarea>
+      <button onClick="putyeji()">接收业绩</button>
+    </div>
   </body>
   <script type="text/javascript">
     //获取表格数据
