@@ -96,6 +96,10 @@
         </tr>
         <tr> <td scope = "row">总计</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
         </tr>
+        <tr> <td scope = "row">昨日业绩</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">今日新增</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
       </tbody>
     </table>
 
@@ -187,6 +191,9 @@ function putyeji(){
       case "长春路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[22].cells[j].innerHTML = yejiArray[j];
       };break;
+      case "市北大区":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[24].cells[j].innerHTML = yejiArray[j];
+      };break;
 
       default:
     }
@@ -223,10 +230,11 @@ function sumyeji(){
   
   for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
     let sumcol = 0;
-    for(let i=1;i<liantable.rows.length-1;i++){
+    for(let i=1;i<liantable.rows.length-2;i++){
        sumcol += Number(data[i][j]);
     }
         liantable.rows[23].cells[j].innerHTML = sumcol;
+        liantable.rows[25].cells[j].innerHTML = Number(data[24][j])-Number(data[23][j]);
 }
 }
   </script>
