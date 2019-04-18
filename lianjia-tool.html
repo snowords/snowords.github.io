@@ -20,7 +20,6 @@
     }
     caption {
       font-size: 2em;
-      color: red;
     }
     </style>
   </head>
@@ -98,7 +97,8 @@
     <div>
       <label for="yeji">请输入店面业绩：</label>
       <textarea id="yeji" rows="11" cols="80"></textarea>
-      <button onClick="putyeji()">接收业绩</button>
+      <button onClick="putyeji()">注入表格</button>
+      <button onClick="cleartext()">清除输入框</button>
     </div>
   </body>
   <script type="text/javascript">
@@ -124,13 +124,11 @@ function putyeji(){
   let yejiData = yeji.value;
   console.log(yejiData);
   let storeName = yejiData.split('\n');
-  let storeArray = yejiData.match(/\d+(.\d+)?/g);
+  let storeArray = new Array(19);       //初始化数组
+  storeArray = yejiData.match(/\d+(.\d+)?/g);
   console.log(storeArray);
 
-
   let yejiArray = [0,storeArray[14],storeArray[15],storeArray[16],storeArray[17],storeArray[18],storeArray[19],storeArray[0],storeArray[1],storeArray[2],storeArray[3],storeArray[4],storeArray[5]]
-
-  //TODO:提取到一个新数组
 
     switch (storeName[0]) {
       case "中海紫御店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
@@ -204,17 +202,14 @@ function putyeji(){
     }
     console.log(yejiArray);
 
-    // if (yejiArray[i-1]==="中海紫御店") {
-    //   for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
-    //     liantable.rows[i].cells[j].innerHTML = yejiArray[j];
-    //   }
-    // }else {
-    //   break;
-    // }
 }
 
-//数据传入表格
+//清除输入文本数据
 
+function cleartext(){
+  document.getElementById("yeji").value='';
+  console.log(123);
+}
 
   </script>
 </html>
