@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Snoword">
+    <title>统计业绩工具</title>
+    <style>
+    table {
+      table-layout: fixed;
+      border-collapse: collapse;
+      border: 3px solid black;
+      text-align: center;
+    }
+    th,td {
+      table-layout: auto;
+      width: 100px;
+      border: 1px solid black;
+    }
+    </style>
+  </head>
+
+  <body>
+      <div>
+        <label for="yeji">请输入店面业绩：</label>
+        <textarea id="yeji" rows="11" cols="80"></textarea>
+      </div>
+        <button onClick="putyeji()">接收业绩</button>
+    <table id="liantable">
+      <caption>市北大区每日业绩统计</caption>
+
+      <thead>
+        <tr>
+          <th scope ="col">店名</th>
+          <th scope ="col">二手单量</th>
+          <th scope ="col">二手业绩</th>
+          <th scope ="col">新房单量</th>
+          <th scope ="col">新房业绩</th>
+          <th scope ="col">租赁单量</th>
+          <th scope ="col">租赁业绩</th>
+          <th scope ="col">二手带看量</th>
+          <th scope ="col">新房带看量</th>
+          <th scope ="col">租赁带看量</th>
+          <th scope ="col">二手约看量</th>
+          <th scope ="col">新房约看量</th>
+          <th scope ="col">租赁约看量</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr> <td scope = "row">中海紫御店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">伊春路店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">佳木斯路店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">利津路店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">北仲路店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">台东一路店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">四方实验小区店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">大名路店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">天赐良园店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">延吉路店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">延安三路店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">敦化路店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">新岭花园店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">步行街一期店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">汉口路店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">福安小区店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">绍兴路店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">错埠岭一小区店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">锦绣华城店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">海泊人家店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">锦绣华城贰店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr> <td scope = "row">长春路店</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+      </tbody>
+
+    </table>
+  </body>
+  <script type="text/javascript">
+    //获取表格数据
+  let liantable = document.getElementById("liantable");
+  let data = [];
+  for(let i=0,rows=liantable.rows.length;i<rows;i++){
+    for(let j=0,cells=liantable.rows[1].cells.length;j<cells;j++){
+      if (!data[i]) {
+        data[i] = new Array;
+      }
+      data[i][j] = liantable.rows[i].cells[j].innerHTML;
+    }
+  }
+  // return data;
+  console.log("列数2：",liantable.rows.length);
+  console.log("行数2：",liantable.rows[0].cells.length);
+  console.log(data);
+
+  //接收输入的数据,处理字符串
+function putyeji(){
+  let yeji = document.getElementById("yeji");
+  let yejiData = yeji.value;
+  console.log(yejiData);
+  let storeName = yejiData.split('\n');
+  let storeArray = yejiData.match(/\d+(.\d+)?/g);
+  console.log(storeArray);
+
+
+  let yejiArray = [0,storeArray[14],storeArray[15],storeArray[16],storeArray[17],storeArray[18],storeArray[19],storeArray[0],storeArray[1],storeArray[2],storeArray[3],storeArray[4],storeArray[5]]
+
+  //TODO:提取到一个新数组
+
+    switch (storeName[0]) {
+      case "中海紫御店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[1].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "伊春路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[2].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "佳木斯路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[3].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "利津路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[4].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "北仲路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[5].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "台东一路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[6].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "四方实验小区店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[7].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "大名路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[8].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "天赐良园店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[9].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "延吉路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[10].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "延安三路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[11].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "敦化路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[12].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "新岭花园店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[13].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "步行街一期店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[14].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "汉口路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[15].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "福安小区店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[16].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "绍兴路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[17].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "错埠岭一小区店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[18].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "锦绣华城店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[19].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "海泊人家店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[20].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "锦绣华城贰店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[21].cells[j].innerHTML = yejiArray[j];
+      };break;
+      case "长春路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+        liantable.rows[22].cells[j].innerHTML = yejiArray[j];
+      };break;
+
+      default:
+    }
+    console.log(yejiArray);
+
+    // if (yejiArray[i-1]==="中海紫御店") {
+    //   for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
+    //     liantable.rows[i].cells[j].innerHTML = yejiArray[j];
+    //   }
+    // }else {
+    //   break;
+    // }
+}
+
+//数据传入表格
+
+
+  </script>
+</html>
