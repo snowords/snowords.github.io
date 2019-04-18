@@ -227,14 +227,13 @@ function sumyeji(){
   console.log("列数2：",liantable.rows.length);
   console.log("行数2：",liantable.rows[0].cells.length);
   console.log(data);
-  
   for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
     let sumcol = 0;
     for(let i=1;i<liantable.rows.length-2;i++){
        sumcol += Number(data[i][j]);
     }
         liantable.rows[23].cells[j].innerHTML = sumcol;
-        liantable.rows[25].cells[j].innerHTML = Number(data[23][j])-Number(data[24][j]);
+        liantable.rows[25].cells[j].innerHTML = sumcol-Number(data[24][j]);
 }
 }
   </script>
