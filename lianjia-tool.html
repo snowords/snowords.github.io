@@ -107,7 +107,8 @@
       <textarea id="yeji" rows="11" cols="50"></textarea>
       <button onClick="putyeji()">注入表格</button>
       <button onClick="cleartext()">清除输入框</button>
-      <button onClick="sumyeji()">业绩求和</button>
+      <button id="sumbut" onClick="sumyeji()">业绩求和</button>
+       <textarea id="resault" rows="11" clos="50"></textarea>
     </div>
   
   <script type="text/javascript">
@@ -127,69 +128,91 @@ function putyeji(){
     switch (storeName[0]) {
       case "中海紫御店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[1].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[1].style.backgroundColor="pink";
       };break;
       case "伊春路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[2].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[2].style.backgroundColor="pink";
       };break;
       case "佳木斯路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[3].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[3].style.backgroundColor="pink";
       };break;
       case "利津路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[4].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[4].style.backgroundColor="pink";
       };break;
       case "北仲路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[5].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[5].style.backgroundColor="pink";
       };break;
       case "台东一路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[6].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[6].style.backgroundColor="pink";
       };break;
       case "四方实验小区店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[7].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[7].style.backgroundColor="pink";
       };break;
       case "大名路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[8].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[8].style.backgroundColor="pink";
       };break;
       case "天赐良园店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[9].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[9].style.backgroundColor="pink";
       };break;
       case "延吉路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[10].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[10].style.backgroundColor="pink";
       };break;
       case "延安三路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[11].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[11].style.backgroundColor="pink";
       };break;
       case "敦化路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[12].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[12].style.backgroundColor="pink";
       };break;
       case "新岭花园店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[13].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[13].style.backgroundColor="pink";
       };break;
       case "步行街一期店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[14].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[14].style.backgroundColor="pink";
       };break;
       case "汉口路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[15].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[15].style.backgroundColor="pink";
       };break;
       case "福安小区店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[16].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[16].style.backgroundColor="pink";
       };break;
       case "绍兴路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[17].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[17].style.backgroundColor="pink";
       };break;
       case "错埠岭一小区店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[18].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[18].style.backgroundColor="pink";
       };break;
       case "锦绣华城店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[19].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[19].style.backgroundColor="pink";
       };break;
       case "海泊人家店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[20].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[20].style.backgroundColor="pink";
       };break;
       case "锦绣华城贰店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[21].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[21].style.backgroundColor="pink";
       };break;
       case "长春路店":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[22].cells[j].innerHTML = yejiArray[j];
+        liantable.rows[22].style.backgroundColor="pink";
       };break;
       case "市北大区":for(let j=1,cells=liantable.rows[1].cells.length;j<cells;j++){
         liantable.rows[24].cells[j].innerHTML = yejiArray[j];
@@ -198,22 +221,22 @@ function putyeji(){
       default:
     }
     console.log(yejiArray);
+    yeji.value='';
+    console.log(123);
 
 }
 
 //清除输入文本数据
 
 function cleartext(){
-  document.getElementById("yeji").value='';
+document.getElementById("yeji").value='';
   console.log(123);
 }
-
-    
 
   //业绩求和
 function sumyeji(){
 //获取表格数据
-
+document.getElementById("sumbtn").disabled=true;
   let data = [];
   for(let i=0,rows=liantable.rows.length;i<rows;i++){
     for(let j=0,cells=liantable.rows[1].cells.length;j<cells;j++){
@@ -236,6 +259,6 @@ function sumyeji(){
         liantable.rows[25].cells[j].innerHTML = sumcol-Number(data[24][j]);
 }
 }
-   </script>
+  </script>
   </body>
 </html>
