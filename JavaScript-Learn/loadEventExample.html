@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>load event example</title>
+</head>
+<body>
+    <img src="my-logo.png" id="mylogo" onload="alert('图片加载已完成！')">
+    <canvas id="drawing" width="300" height="300">A drawing about sonmething</canvas>
+</body>
+<script>
+    console.log("Hello World");
+    var EventUtil = {
+        addHandler: function(element,type,handler){
+            if(element.addEventListener){
+                element.addEventListener(type,handler,false);
+            }else if(element.attachEvent){
+                element.attachEvent("on" + type,handler);
+            }else{
+                element["on" + type] = handler;
+            }
+        },
+        getEvent:function(event){
+            return event ? event : window.event;
+        },
+       // getTarget
+        removeHandle:function(element,type,handler){
+            if(element.removeEventListener){
+                element.removeEventListener(type,handler,false);
+            }else if(element.detachEvent){
+                element.detachEvent("on"+type,handler);
+            }else{
+                element["on"+type]=null;
+            }
+        }
+    };
+
+EventUtil.addHandler(window,"resize",function(event){
+    alert("窗口大小已改变（js方式）！");
+});
+var logo = document.getElementById("mylogo");
+EventUtil.addHandler(logo,"click",function(event){
+    event = EventUtil.getEvent(event);
+    alert("鼠标的点击坐标为：" + event.clientX + "," + event.clientY);
+});
+
+
+var image = document.images[0]; 
+context.drawImage( image, 10, 450);
+</script>
+</html>

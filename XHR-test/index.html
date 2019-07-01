@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XHR学习</title>
+</head>
+<body>
+    
+    <script>
+        //兼容所有浏览器
+        function createXHR(){ 
+            if (typeof XMLHttpRequest != "undefined"){ 
+                return new XMLHttpRequest(); 
+            } else if (typeof ActiveXObject != "undefined"){ 
+                if (typeof arguments.callee.activeXString != "string"){ 
+                    var versions = ["MSXML2. XMLHttp. 6.0", "MSXML2. XMLHttp. 3.0", "MSXML2. XMLHttp"], i, len; 
+                    for (i = 0, len = versions.length; i < len; i++){ 
+                        try { 
+                            new ActiveXObject( versions[ i]); 
+                            arguments.callee.activeXString = versions[ i]; break; 
+                        } catch (ex){ 
+                            // 跳 过 
+                            alert("此浏览器不支持XHR")
+                        } 
+                    }   
+                } 
+                return new ActiveXObject( arguments.callee.activeXString); 
+            } else { 
+                throw new Error(" No XHR object available."); 
+            } 
+        };
+        //创造xhr对象
+        var xhr = createXHR(); 
+        xhr.onreadystatechange = function(){ 
+            if (xhr.readyState == 4){ 
+                if (( xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){ 
+                    alert( xhr.responseText); 
+                    console.log("一柱擎天");
+                } else { 
+                    alert(" Request was unsuccessful: " + xhr.status); 
+                } 
+            } 
+        }; 
+        // xhr.open("get", "example.php?name1=value1&name2=value2", true);
+        // xhr.send(null);
+        //GET 请求
+        //辅助向现有的 URL 末尾添加查询字符串参数
+        function addURLParam(url, name, value) {
+            url += (url.indexOf("?") == -1 ? "?" : "&"); 
+            url += encodeURIComponent(name) + "=" + encodeURIComponent(value); 
+            return url; 
+        }
+        var url = "example.php"; 
+        // 添 加 参 数 
+        url = addURLParam( url, "name", "Nicholas"); 
+        url = addURLParam( url, "book", "Professional JavaScript"); 
+        // 初 始 化 请 求 
+        xhr.open("get",url,false);
+        xhr.send(null);
+
+        console.log("hello world bitch");
+
+        var socket = new WebSocket("ws://127.0.0.1:5500/Server/server.php");
+        // socket.close();
+        socket.send("Hello world bitch!");
+        var message = { 
+            time: new Date(),
+            text: "Hello world!", 
+            clientId: "asdfp8734rew" 
+            }; 
+            
+        socket.send(JSON.stringify(message));
+
+
+
+        
+        
+    </script>
+</body>
+</html>
