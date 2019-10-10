@@ -1,3 +1,3 @@
-# [snowords](snowords.github.io)
+# [Snowords](snowords.github.io)
 -----
 ### This is my first page.
